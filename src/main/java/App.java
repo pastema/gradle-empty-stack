@@ -7,6 +7,38 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        //Init Classes:
+        Person me = new Person();
+        Mobile android = new Android();
+        Mobile apple = new iPhone();
+
+        //Set Phone
+        me.setMyPhone(apple);
+        //Set Name of Person
+        me.setName("Martin");
+
+        //Init Android Phone
+        android.setName("Samsung Note 10");
+        android.setBrand("Samsung");
+        android.setColor("Black");
+        System.out.println(android.getBasicInformation(android.getName(),android.getColor(),android.getBrand()));
+        System.out.println(android.call("My phone is LG and its OS is Android"));
+
+        //Init Apple Phone
+        apple.setName("IphoneX");
+        apple.setBrand("Apple");
+        apple.setColor("Red");
+        System.out.println(apple.getBasicInformation(apple.getName(),apple.getColor(),apple.getBrand()));
+        System.out.println(apple.call("My phone is Apple and its OS is IOS"));
+
+        //Init iPhoneRobot Class:
+        iPhoneRobot robot = new iPhoneRobot();
+        robot.setMyPhone(android);
+        if(robot.getMyPhone().toString().contains("iPhone")) {
+            System.out.println(robot.getMyPhone());
+        }
+        else{
+            System.out.println("Not iPhone");
+        }
     }
 }

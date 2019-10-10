@@ -1,39 +1,15 @@
 public class Android extends Mobile {
-    private String name;
-    private String color;
-    private String brand;
+    private Integer messageLimit = 5;
     @Override
     public String call(String message){
+        if(message.length() > messageLimit) {
+            return "<Android> Message cannot be sent";
+        }
         return "<Android>Message: " + message;
     }
 
     @Override
     public String getBasicInformation(String name, String color, String brand) {
-        return "name: " + name + ", color: " + color + ", brand: " + brand;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
+            return "name: " + name + ", color: " + color + ", brand: " + brand;
     }
 }
